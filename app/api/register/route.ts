@@ -1,10 +1,10 @@
 import { NextResponse } from "next/server";
-import { assertGoogleFormEnv, canSendEmail } from "@/lib/env";
-import { submitRegistrationToGoogleForm } from "@/lib/google-form";
+import { assertSupabaseEnv, canSendEmail } from "@/lib/env";
 import { enqueueConfirmationEmail } from "@/lib/mail-queue";
 import { createQrDataUrl } from "@/lib/qr";
 import { createRegistrationId } from "@/lib/registration";
 import { durationMs, maskEmail } from "@/lib/debug";
+import { saveRegistrationToSupabase } from "@/lib/supabase-registration";
 import {
   validateRegistrationPayload,
   yupErrorsToFieldMap,
@@ -20,7 +20,7 @@ export async function POST(request: Request) {
     const body = await request.json();
     const input = await validateRegistrationPayload(body);
 
-    assertGoogleFormEnv();
+    assertSupabaseEnv();
 
     const registration = {
       ...input,
@@ -33,7 +33,7 @@ export async function POST(request: Request) {
       companion: registration.companion,
     });
 
-    await submitRegistrationToGoogleForm(registration);
+    await saveRegistrationToSupabase(registration);
 
     if (canSendEmail()) {
       enqueueConfirmationEmail(registration);
