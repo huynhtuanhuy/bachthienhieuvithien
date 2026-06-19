@@ -1,0 +1,339 @@
+:root {
+  --bg: #f3f3fe;
+  --surface: #ffffff;
+  --ink: #2c3345;
+  --muted: #464d5f;
+  --line: #e5e7f2;
+  --primary: #b82d24;
+  --primary-dark: #8f221b;
+  --accent: #e67e22;
+  --danger: #b42318;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 28px 16px 56px;
+}
+
+.shell {
+  width: min(980px, 100%);
+  margin: 0 auto;
+}
+
+.cover {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.cover img {
+  width: 100%;
+  max-width: 960px;
+  height: auto;
+  aspect-ratio: 4;
+  object-fit: cover;
+}
+
+.formPanel,
+.ticketPanel {
+  background: var(--surface);
+  border: 0;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(84, 95, 125, 0.14);
+}
+
+.formPanel {
+  width: min(790px, 100%);
+  margin: 0 auto;
+  padding: 35px 52px;
+}
+
+.introBox {
+  box-sizing: border-box;
+  margin: 15px 0 25px;
+  padding: 30px 35px;
+  color: #3d3d3d;
+  background: linear-gradient(135deg, #fffdfb 0%, #fff9f5 100%);
+  border: 1px solid #f5dbcc;
+  border-left: 5px solid var(--primary);
+  border-radius: 4px 12px 12px 4px;
+  box-shadow: 0 4px 15px rgba(184, 45, 36, 0.06);
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.introBox h1 {
+  margin: 0 0 6px;
+  color: var(--primary);
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.35;
+  letter-spacing: 0.5px;
+  text-align: center;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
+  text-transform: uppercase;
+}
+
+.introLead {
+  margin: 0 0 22px;
+  color: var(--accent);
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  text-align: center;
+}
+
+.introText {
+  color: #444444;
+  font-size: 14.5px;
+  letter-spacing: 0.1px;
+}
+
+.introText p {
+  margin: 0 0 14px;
+  text-indent: 20px;
+}
+
+.introText p:last-child {
+  margin-bottom: 20px;
+}
+
+.introClosing {
+  margin-top: 25px;
+  padding-top: 15px;
+  border-top: 1px dashed #eebb99;
+  text-align: center;
+}
+
+.introClosing p:first-child {
+  margin: 0 0 6px;
+  color: var(--primary);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.introClosing p:last-child {
+  margin: 0;
+  color: #7f8c8d;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.registrationForm {
+  padding-top: 8px;
+}
+
+.formTitle {
+  margin: 0 0 22px;
+  color: var(--ink);
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.label {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.required {
+  color: var(--danger);
+}
+
+.control {
+  min-height: 46px;
+  width: 100%;
+  border: 1px solid #b8bdc9;
+  border-radius: 4px;
+  background: #fff;
+  color: var(--ink);
+  padding: 11px 12px;
+  outline: none;
+}
+
+.control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(184, 45, 36, 0.14);
+}
+
+.controlError {
+  border-color: var(--danger);
+}
+
+.hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.formError,
+.fieldError {
+  margin: 0;
+  color: var(--danger);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.fieldError {
+  margin: 0;
+}
+
+.textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.checkboxField {
+  border: 0;
+  padding: 0;
+}
+
+.checkboxList {
+  display: grid;
+  gap: 10px;
+}
+
+.checkboxItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  color: var(--ink);
+  cursor: pointer;
+  line-height: 1.4;
+}
+
+.checkboxItem input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary);
+}
+
+.otherField {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.success {
+  margin: 0 0 14px;
+  color: #24746a;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.successPanel {
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+  padding: 12px 0 4px;
+  text-align: center;
+}
+
+.successPanel .success {
+  margin: 0;
+}
+
+.submitArea {
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  margin-top: 28px;
+  text-align: center;
+}
+
+.submit {
+  min-height: 48px;
+  width: auto;
+  min-width: 170px;
+  border: 0;
+  border-radius: 4px;
+  background: var(--primary);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.submit:hover {
+  background: var(--primary-dark);
+}
+
+.submit:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.ticketPage {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 24px;
+}
+
+.ticketPanel {
+  width: min(520px, 100%);
+  padding: 28px;
+  text-align: center;
+}
+
+.ticketPanel h1 {
+  margin: 0 0 12px;
+  font-size: 30px;
+}
+
+.ticketPanel p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.qrImage {
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  margin: 18px auto 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+@media (max-width: 780px) {
+  .page {
+    padding: 16px 12px 40px;
+  }
+
+  .formPanel {
+    padding: 20px 16px;
+  }
+
+  .introBox {
+    padding: 22px 20px;
+  }
+
+  .introBox h1 {
+    font-size: 20px;
+  }
+}
